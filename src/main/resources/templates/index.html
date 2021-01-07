@@ -28,7 +28,8 @@
                     <label for="email">Email address:</label>
                     <input type="email" class="form-control" placeholder="Enter email" id="email" data-ng-model="data.email">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" class="btn btn-primary">Submit</button> <span>{{message}}</span>
             </form>
         </div>
             <script th:src="@{/js/usersData.js}" type="text/javascript"></script>
