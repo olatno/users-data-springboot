@@ -7,7 +7,7 @@ import com.users.api.model.UsersData;
  * The Users data repository class
  *
  * @author ola
- * @since 14/11/2020.
+ * @since 05/01/2021.
  */
 public interface UsersDataRepository extends JpaRepository<UsersData, Integer>{
 }

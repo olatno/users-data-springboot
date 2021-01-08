@@ -8,6 +8,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * User's data entity class
+ *
+ * @author Ola
+ * @since 05/01/2021
+ */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

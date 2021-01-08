@@ -9,6 +9,13 @@ import java.security.GeneralSecurityException;
 import java.security.Key;
 import java.util.Base64;
 
+/**
+ * UsersDataEncryptor class - encrypt user's data when saved to db and decrypt user's data when requested from db
+ *
+ * @author Ola
+ * @since 06/01/2021
+ */
+
 @Component
 public class UsersDataEncryptor implements AttributeConverter<String, String> {
 

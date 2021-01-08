@@ -9,6 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+/**
+ * @author Ola
+ * @since 05/01/2021
+ */
+
 @Service
 public class UsersDataServiceImpl implements UsersDataService {
 
@@ -24,11 +29,12 @@ public class UsersDataServiceImpl implements UsersDataService {
      * {@inheritDoc}
      */
     @Override
-    public UsersData saveEncryptedData(UsersData usersData) {
-        if(StringUtils.isEmpty(usersData.getFirstName()) && StringUtils.isEmpty(usersData.getFirstName())){
+    public UsersData saveEncryptedData(UsersData usersData) throws UsersDataException{
+        if(StringUtils.isEmpty(usersData.getEmail()) || StringUtils.isEmpty(usersData.getFirstName())){
             throw new UsersDataException("Firstname and email address are mandatory");
+        } else {
+            usersDataRepository.save(usersData);
+            return usersDataRepository.getOne(usersData.getId());
         }
-        usersDataRepository.save(usersData);
-        return usersDataRepository.getOne(usersData.getId());
     }
 }

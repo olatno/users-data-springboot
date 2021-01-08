@@ -13,6 +13,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Rest controller class
+ * @author Ola
+ * @since 06/01/2021
+ */
+
 @RestController
 @RequestMapping("/")
 public class UsersDataRestController {
@@ -28,7 +34,7 @@ public class UsersDataRestController {
 
     @PostMapping("users/data")
     ResponseEntity<UsersData> save(@RequestBody UsersData jsonData) {
-        UsersData usersData = null;
+        UsersData usersData;
         try {
             usersData =  usersDataService.saveEncryptedData(jsonData);
             return ResponseEntity.ok()
@@ -36,7 +42,7 @@ public class UsersDataRestController {
                     .body(usersData);
         } catch (UsersDataException ex) {
             LOG.error(ex.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(usersData);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 }

@@ -1,10 +1,10 @@
 package com.users.api.exception;
 
 /**
- * GalleryServiceException class
+ * UsersDataException class - custom exception for user's data
  *
  * @author ola
- * @since 14/11/2020.
+ * @since 06/01/2021.
  */
 public class UsersDataException extends RuntimeException {
 

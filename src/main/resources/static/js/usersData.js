@@ -1,12 +1,11 @@
 /**
- * Created by olatu on 16/11/2020.
+ * Created by olatu on 06/01/2021.
  */
 
 var app  = angular.module('usersDataApp',[]);
 
 
     app.controller('usersDataCtrl', ['$scope','$http',  function ($scope,  $http) {
-        let vm = this;
         $scope.data = {};
         $scope.message = '';
         $scope.usersData = {};
